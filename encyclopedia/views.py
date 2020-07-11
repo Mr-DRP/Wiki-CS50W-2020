@@ -36,7 +36,7 @@ def content(request,entry):
 
 def create(request):
     if request.method == "POST":
-        title = request.POST.get("title")
+        title = request.POST.get("title").strip()
         content = request.POST.get("content")
         entries = util.list_entries()
         check = [s for s in entries if title.lower()==s.lower()]
